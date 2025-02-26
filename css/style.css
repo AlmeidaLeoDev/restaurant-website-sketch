@@ -1,0 +1,231 @@
+/* Seleciona todos os elementos e remove margens e paddings padrão, define box-sizing e fonte global */
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e border no cálculo da largura e altura dos elementos */
+    font-family: "Cabin", sans-serif; /* Define a fonte padrão para todos os elementos */
+}
+
+/* Estiliza o elemento body */
+body {
+    background-color: black; /* Define o fundo preto para a página */
+    display: flex; /* Usa flexbox para organizar os elementos filhos */
+    flex-direction: column; /* Organiza os filhos em coluna */
+    min-height: 100vh; /* Garante que o body tenha pelo menos a altura da viewport */
+    min-width: 100vw; /* Garante que o body tenha pelo menos a largura da viewport */
+}
+
+/* Estiliza o cabeçalho (header) */
+header {
+    background-color: #fff462; /* Define a cor de fundo do header */
+    height: 80px; /* Define a altura do header */
+    display: flex; /* Usa flexbox para os elementos internos */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    justify-content: space-around; /* Distribui os itens com espaço uniforme ao redor */
+}
+
+/* Estiliza a imagem dentro do container com a classe 'logo' no header */
+header .logo img {
+    height: 80px; /* Define a altura da imagem como 80px */
+}
+
+/* Estiliza o link que está ativo */
+.active-link {
+    text-decoration: none; /* Remove sublinhado do texto */
+    color: white; /* Define a cor do texto como branco */
+    background-color: black; /* Define o fundo como preto */
+    text-transform: uppercase; /* Converte o texto para letras maiúsculas */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+}
+
+/* Estiliza os links dentro do container com a classe 'links' no header */
+header .links a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    padding: 10px 20px; /* Adiciona espaçamento interno de 10px vertical e 20px horizontal */
+    transition: .2s; /* Define uma transição de 0.2 segundos para mudanças de estado */
+}
+
+/* Estiliza os links do header quando o mouse passa sobre eles */
+header .links a:hover {
+    color: white; /* Altera a cor do texto para branco no hover */
+    background-color: black; /* Altera o fundo para preto no hover */
+}
+
+/* Estiliza o elemento main */
+main {
+    background-color: #d1e489; /* Define a cor de fundo do main */
+    flex-grow: 1; /* Faz com que o main ocupe o espaço restante da tela */
+    padding: 20px; /* Adiciona padding interno de 20px */
+    display: flex; /* Usa flexbox para organizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+/* Estiliza o elemento com a classe "thumbail" dentro de main */
+main .thumbail {    
+    flex-grow: 1; /* Permite que o elemento cresça para ocupar o espaço disponível */
+    width: 100%; /* Define a largura como 100% do contêiner pai */
+    height: 450px; /* Define a altura fixa em 450px */
+    background-image: url('../img/marmita.jpg'); /* Define a imagem de fundo */
+    background-size: cover; /* Faz com que a imagem cubra todo o elemento */
+    background-position: center; /* Centraliza a imagem de fundo */
+    clip-path: polygon(5% 0, 80% 0%, 100% 20%, 99% 68%, 75% 100%, 0 100%, 10% 81%, 0% 20%); /* Aplica um recorte poligonal à imagem */
+}
+
+/* Estiliza o conteúdo com a classe "conteudo" dentro de main */
+main .conteudo {
+    max-width: 50vw; /* Define a largura máxima como 50% da viewport */
+    padding: 25px; /* Adiciona padding interno de 25px */
+}
+
+/* Estiliza o título (h1) dentro de .conteudo */
+.conteudo h1 {
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    font-size: 24px; /* Define o tamanho da fonte para 24px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    text-shadow: 1px 0px 2px rgba(0, 0, 0, 0.397); /* Adiciona uma sombra sutil ao texto */
+}
+
+/* Estiliza os parágrafos dentro de .conteudo */
+.conteudo p {
+    margin-top: 20px; /* Adiciona margem superior de 20px */
+    margin-bottom: 20px; /* Adiciona margem inferior de 20px */
+}
+
+/* Estiliza os links dentro de .conteudo */
+.conteudo a {
+    text-decoration: none; /* Remove sublinhado do texto */
+    color: white; /* Define a cor do texto como branco */
+    background-color: black; /* Define o fundo como preto */
+    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    font-size: 14px; /* Define o tamanho da fonte para 14px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    padding: 10px 20px; /* Adiciona padding interno de 10px vertical e 20px horizontal */
+}
+
+/* ========================= */
+/* MESAS - GALERIA COM GRID */
+/* ========================= */
+
+/* Container da galeria */
+.gallery-container {
+    display: grid; /* Utiliza grid layout para organizar os itens */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria colunas responsivas com largura mínima de 250px */
+    gap: 30px; /* Define um espaçamento de 30px entre os itens */
+    width: 100%; /* Define a largura total do container como 100% */
+    max-width: 1200px; /* Limita a largura máxima a 1200px */
+    padding: 20px; /* Adiciona padding interno de 20px */
+}
+
+/* Estiliza cada item da galeria */
+.gallery-item {
+    height: 300px; /* Define a altura fixa do item em 300px */
+    border: 1px solid #ccc; /* Adiciona uma borda de 1px com cor #ccc */
+    border-radius: 8px; /* Arredonda os cantos com raio de 8px */
+    overflow: hidden; /* Oculta o conteúdo que excede os limites do item */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve ao item */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Define transições suaves para transformações e sombra */
+    display: grid; /* Utiliza grid layout para os elementos internos */
+    grid-template-rows: 200px 1fr; /* Define duas linhas: a primeira de 200px e a segunda que ocupa o restante do espaço */
+}
+
+/* Efeito de hover para o item da galeria */
+.gallery-item:hover {
+    transform: translateY(-5px); /* Move o item 5px para cima quando o mouse passa sobre ele */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Aumenta a sombra do item ao passar o mouse */
+    border-color: #777; /* Altera a cor da borda para um cinza mais escuro no hover */
+}
+
+/* Estiliza o link dentro do item da galeria */
+.gallery-item a {
+    display: block; /* Faz com que o link ocupe todo o espaço disponível */
+    overflow: hidden; /* Oculta partes do conteúdo que ultrapassem os limites do link */
+}
+
+/* Container da imagem dentro do item da galeria */
+.image-container {
+    width: 100%; /* Define a largura total do container como 100% */
+    height: 100%; /* Define a altura total do container como 100% */
+    overflow: hidden; /* Oculta qualquer parte da imagem que exceda os limites */
+    position: relative; /* Define o posicionamento relativo para posicionar elementos internos de forma absoluta */
+}
+
+/* Estiliza a imagem dentro do container da imagem */
+.image-container img {
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura do container */
+    height: 100%; /* Faz com que a imagem ocupe 100% da altura do container */
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o container sem distorcer */
+    object-position: center; /* Centraliza a imagem dentro do container */
+    transition: transform 0.3s ease; /* Adiciona transição suave para transformações na imagem */
+    position: absolute; /* Posiciona a imagem de forma absoluta dentro do container */
+    top: 0; /* Posiciona a imagem no topo do container */
+    left: 0; /* Posiciona a imagem à esquerda do container */
+}
+
+/* Efeito de hover para a imagem dentro do item da galeria */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+/* Estiliza a descrição (desc) do item da galeria */
+.desc {
+    padding: 15px;
+    text-align: left;
+    background-color: white;
+    display: block; /* ou flex, se quiser controlar ainda mais o layout */
+}
+
+/* ========================= */
+/* MESAS - GALERIA COM GRID */
+/* ========================= */
+
+ul{
+    margin-top: 20px;
+    vertical-align: text-top;
+    & li{
+        margin-top: 10px;
+        margin-left: 5px;
+        text-align: left;
+    }
+}
+
+.comanda-container{
+    display: grid; 
+    grid-template-columns: 500px; 
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+    width: 100%; /* Define a largura total do container como 100% */
+    max-width: 1200px; /* Limita a largura máxima a 1200px */
+    padding: 20px; /* Adiciona padding interno de 20px */
+}
+
+.titulo-comanda{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/* ============================== */
+/* Media queries para responsividade */
+/* ============================== */
+
+/* Para telas com largura máxima de 768px */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); /* Ajusta a grade para ter duas colunas */
+    }
+}
+
+/* Para telas com largura máxima de 480px */
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* Ajusta a grade para ter uma única coluna */
+    }
+}
